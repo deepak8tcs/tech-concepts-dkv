@@ -1,0 +1,190 @@
+'use strict';  in java script
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+With strict mode, you can not, for example, use undeclared variables
+
+Declaring Strict Mode
+Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+
+"use strict";
+x = 3.14;       // This will cause an error because x is not declared
+
+
+What is a Module in Node.js?
+Consider modules to be the same as JavaScript libraries.
+A set of functions you want to include in your application.
+Node.js has a set of built-in modules which you can use without any further installation.
+Create Your Own Modules:
+
+exports.myDateTime = function () {
+  return Date();
+};
+
+Use the "exports" keyword to make properties and methods available outside the module file.
+
+var http = require('http');  //built in
+var dt = require('./myfirstmodule'); //user -defined
+
+Notice that we use ./ to locate the module, that means that the module is located in the same folder as the Node.js file.
+
+The Built-in HTTP Module
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+To include the HTTP module, use the require() method:
+var http = require('http');
+
+
+export:
+======
+The export statement is used when creating JavaScript modules to export functions, objects,
+or primitive values from the module so they can be used by other programs with the import statement.
+
+Exported modules are in strict mode whether you declare them as such or not. The export statement cannot be used in embedded scripts.
+
+There are two different types of export, named and default. You can have multiple named exports per module but only one default export.
+
+note-> module is also known as namespace now.
+
+// Exporting individual features
+export let name1, name2, …, nameN; // also var, const
+export let name1 = …, name2 = …, …, nameN; // also var, const
+export function functionName(){...}
+export class ClassName {...}
+
+// Export list
+export { name1, name2, …, nameN };
+
+// Renaming exports
+export { variable1 as name1, variable2 as name2, …, nameN };
+
+// Default exports
+export default expression;
+export default function (…) { … } // also class, function*
+export default function name1(…) { … } // also class, function*
+export { name1 as default, … };
+
+// Aggregating modules
+export * from …;
+export { name1, name2, …, nameN } from …;
+export { import1 as name1, import2 as name2, …, nameN } from …;
+export { default } from …;
+
+----------=========================
+https://www.typescriptlang.org/docs/handbook/modules.html
+
+1. Exporting a declaration
+Any declaration (such as a variable, function, class, type alias, or interface) can be exported by adding the export keyword
+
+ZipCodeValidator.ts
+
+export const numberRegexp = /^[0-9]+$/;
+
+export class ZipCodeValidator implements StringValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
+
+2. Export statements
+Export statements are handy when exports need to be renamed for consumers, so the above example can be written as:
+
+class ZipCodeValidator implements StringValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
+export { ZipCodeValidator };
+export { ZipCodeValidator as mainValidator };
+
+3.Re-exports
+Often modules extend other modules, and partially expose some of their features. A re-export does not import it locally, or introduce a local variable.
+
+ParseIntBasedZipCodeValidator.ts
+
+export class ParseIntBasedZipCodeValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && parseInt(s).toString() === s;
+    }
+}
+
+export {ZipCodeValidator as RegExpBasedZipCodeValidator} from "./ZipCodeValidator"; // Export original validator but rename it
+-----------------------------------------------------
+4. export * from "module" //export all exports from the given module
+eg.
+export * from "./ZipCodeValidator";  // exports class 'ZipCodeValidator'
+
+5.Default exports
+Each module can optionally export a default export. Default exports are marked with the keyword default; 
+and there can only be one default export per module. default exports are imported using a different import form.
+
+--------====================================
+
+Import
+Importing is just about as easy as exporting from a module. Importing an exported declaration is done through using one of the import forms below:
+
+Import a single export from a module
+
+import { ZipCodeValidator } from "./ZipCodeValidator";
+let myValidator = new ZipCodeValidator();
+
+imports can also be renamed
+
+import { ZipCodeValidator as ZCV } from "./ZipCodeValidator";
+let myValidator = new ZCV();
+
+Import the entire module into a single variable, and use it to access the module exports
+
+import * as validator from "./ZipCodeValidator";
+let myValidator = new validator.ZipCodeValidator();
+---------------------------
+
+Classes and function declarations can be authored directly as default exports. Default export class and function declaration names are optional.
+
+ZipCodeValidator.ts
+export default class ZipCodeValidator {
+    static numberRegexp = /^[0-9]+$/;
+    isAcceptable(s: string) {
+        return s.length === 5 && ZipCodeValidator.numberRegexp.test(s);
+    }
+}
+Test.ts
+import validator from "./ZipCodeValidator";   ///here "validator" can be any name like "xyz" in case of default export
+
+let myValidator = new validator();
+
+==============
+
+export = and import = require()  //not used in typescript/node js//used in commonjs
+
+When exporting a module using export =, TypeScript-specific import module = require("module") must be used to import the module.
+
+ZipCodeValidator.ts
+let numberRegexp = /^[0-9]+$/;
+class ZipCodeValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
+export = ZipCodeValidator;
+
+Test.ts
+import zip = require("./ZipCodeValidator");
+
+// Some samples to try
+let strings = ["Hello", "98052", "101"];
+
+// Validators to use
+let validator = new zip();
+
+// Show whether each string passed each validator
+strings.forEach(s => {
+  console.log(`"${ s }" - ${ validator.isAcceptable(s) ? "matches" : "does not match" }`);
+});
+
+============================
+Empty import (TypeScript, ES6)
+Some modules do not export any variables and only have side-effects, such as mutating the global window (global variables) or prototypes (e.g. polyfills). To execute the body of these modules, they can be imported without specifying any variable names. It will be executed only once, because modules in JavaScript are singletons.
+
+import 'mocha';
+
+describe('shortestPath', () => {});

@@ -1,0 +1,41 @@
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+
+		public void checkBrokenLinks(List<WebElement> links) {
+
+
+			for(WebElement link : links) {
+
+				url = link.getAttribute("href");
+
+				if(url == null || url.isEmpty()){
+					System.out.println("URL is either not configured for anchor tag or it is empty");
+					//Assert.assertFalse(url == null || url.isEmpty()," URL not configured or is empty");
+					continue;
+				}
+
+				if(!url.startsWith("https://www.google.com")){
+					System.out.println("URL belongs to another domain, skipping it.");
+					continue;
+				}
+
+				//HttpURLConnection class has methods to send HTTP request and capture HTTP response code. 
+				//So, output of openConnection() method (URLConnection) is type casted to HttpURLConnection.
+
+				huc = (HttpURLConnection)(new URL(url).openConnection()); 
+
+				huc.setRequestMethod("HEAD");  //We can set Request type as "HEAD" instead of "GET". So that only headers are returned and not document body.
+
+				huc.connect();  //On invoking connect() method, actual connection to url is established and the request is sent.
+
+				respCode = huc.getResponseCode();
+
+				//Assert.assertTrue(!(respCode >= 400)," URL is a broken link");
+				if(respCode >= 400)
+					System.out.println(url+" is a broken link");
+				
+				else
+					System.out.println(url+" is a valid link");
+				
+			}
+
+		}
