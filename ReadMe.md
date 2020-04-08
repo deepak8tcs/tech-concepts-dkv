@@ -15,8 +15,11 @@ or git pull origin master //UI: should fetch and merge on current branch
 ## commiting changes:
 
 git add .
+
 git commit -m "Commit msg"
+
 or git -am "commit message" //to add all and commit in single line
+
 git push
 ======================================================
 
