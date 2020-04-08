@@ -1,0 +1,515 @@
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+
+the popular JavaScript framework Angular 2.0 is written in TypeScript. 
+
+In other words, TypeScript is JavaScript plus some additional features.
+
+TypeScript is both a language and a set of tools.
+
+TypeScript is a strongly typed, object oriented, compiled language. It was designed by Anders Hejlsberg (designer of C#) at Microsoft.
+
+JavaScript is TypeScript. This means that any valid .js file can be renamed to .ts and compiled with other TypeScript files.
+
+TypeScript supports Object Oriented Programming concepts like classes, interfaces, inheritance, etc.
+
+TypeScript is Case-sensitive.
+------------
+Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. 
+its runtime environment for server-side JavaScript. Node.js is required to run JavaScript without a browser support.
+
+===================
+our new framework is a "node js" based project(not maven based)
+Lodash is the most popular javascript library dependency for npm and has loads of handy javascript utility methods.
+
+
+https://michael-kuehnel.de/tooling/2018/03/22/helpers-and-tips-for-npm-run-scripts.html
+=================
+***************Promise Object***************
+
+JavaScript’s new Promises API lets us write asynchronous code very easily.
+
+
+creating a new Promise object:
+
+const promise = new Promise((resolve, reject) => {
+  //asynchronous code goes here
+});
+
+When we instantiate a Promise object, we get a proxy to the data that will be available in future. 
+In our case, we’re expecting some data to be returned from the remote service at some point in future. 
+So, how do we know when the data becomes available? This is where the Promise.then() function is used. 
+This function takes two arguments: a success callback and a failure callback. 
+These callbacks are called when the Promise is settled (i.e. either fulfilled or rejected). 
+If the promise was fulfilled, the success callback will be fired with the actual data you passed to resolve().
+ If the promise was rejected, the failure callback will be called.
+ Whatever you passed to reject() will be passed as an argument to this callback.
+
+
+Note that a promise can have three states:
+
+pending (not fulfilled or rejected)
+fulfilled
+rejected
+
+*********************WebDriverJS***************
+
+WebDriverJs is the Official javascript implementation of selenium. 
+It uses the Selenium's Json-wire-protocol to interact with browser as selenium java does. 
+It is written by selenium guys. Other tools like protractor depends on WebdriverJs to interact with browser.
+
+Webdriverjs is packaged as 'selenium-webdriver' under npm package which runs on nodejs.
+---------------------------------------------------------------------
+********TypeScript - Basic Syntax****************
+
+var message:string = "Hello World" 
+console.log(message)
+
+after compilation(transpilation) its converted to below javascript code:
+var message = "Hello World";
+console.log(message);
+
+var num:number = 12 
+console.log(num)
+
+Each line of instruction is called a statement. Semicolons are optional in TypeScript.
+console.log("hello world")
+console.log("We are learning TypeScript")
+A single line can contain multiple statements. However, these statements must be separated by a semicolon.
+
+************class********
+class Greeting { 
+   greet():void { 
+      console.log("Hello World!!!") 
+   } 
+} 
+var obj = new Greeting(); 
+obj.greet();
+
+==========Data types:===========================
+
+any: The any data type is the super type of all types in TypeScript. 
+
+Built-in types: 
+
+Keyword	Description
+number	Double precision 64-bit floating point values. It can be used to represent both, integers and fractions.
+string	Represents a sequence of Unicode characters
+boolean	Represents logical values, true and false
+void	Used on function return types to represent non-returning functions
+null	Represents an intentional absence of an object value.
+undefined	Denotes value given to all uninitialized variables
+
+Note - There is no integer type in TypeScript and JavaScript.
+
+User-defined Types:
+Enumerations (enums), classes, interfaces, arrays, and tuple.
+
+==============Variables===========================
+-varaiable cannot contain spaces and special characters, except the underscore (_) and the dollar ($) sign.
+Use the "var"  keyword to declare variables.
+
+
+var x: string ='abc';
+var x: string;  // x value is set to undefined by default
+var x=9;  //here type would be set to any
+var x; //here type would be set to any and value of x "undefined"
+
+var num:number = "hello"     // will result in a compilation error as typescript is strongly typed(sensitive about data types assignement) language.
+Given the fact that, Typescript is strongly typed, this feature is optional. 
+we can have:
+var num = "hello" 
+
+type casting/type conversion:
+var str = '1' 
+var str2:number = <number> <any> str   //str is now of type number 
+console.log(str2)
+
+
+when data type is not declared explicitly, the compiler will determine the type of the variable on the basis of the value assigned to it. 
+TypeScript will find the first usage of the variable within the code, 
+determine the type to which it has been initially set and then assume the same type for this variable in the rest of your code block.
+
+var num = 2;    // data type inferred as  number 
+console.log("value of num "+num); 
+num = "12";  //compile time error
+console.log(num);
+
+======Variable Scope: Global/Class/Local:=========
+
+var global_num = 12          //global variable 
+class Numbers { 
+   num_val = 13;             //class variable 
+   static sval = 10;         //static field 
+   
+   storeNum():void { 
+      var local_num = 14;    //local variable 
+   } 
+} 
+console.log("Global num: "+global_num)  
+console.log(Numbers.sval)   //static variable  
+var obj = new Numbers(); 
+console.log("Global num: "+obj.num_val) 
+
+==========
+We can use var, let, or const keywords when declare a variable. 
+If we do not explicitly specify the variable data-type ( for example name : string, mynum : number or isOk : boolean ), 
+then TypeScript will automatically infer the type of a variable based on its value.
+
+var aString = "a traditional var";
+var aString : string = "a traditional var";
+
+======constant variable======
+////const keyword is an augmentation of let in that it prevents re-assignment to a variable. 
+const declarations must be initialized.
+
+ If a variable has been marked as const, then its value can only be set when the variable is defined, and cannot be changed afterwards.
+
+===========var vs. let==============
+var is scoped to the nearest function block and let is scoped to the nearest enclosing block. But both are global if outside any block.
+
+var will let you re-declare the same variable in the same scope. On the other hand, let will not:
+
+let abc : string = "test";
+let abc : string = "abc"; //Syntax Error
+
+var abc = "test";
+var abc = "abcd"; //no problem
+
+========On transpiling, the following JavaScript code is generated -============
+var global_num = 12;              //global variable 
+
+var Numbers = (function () {
+   function Numbers() {
+      this.num_val = 13;          //class variable 
+   }
+
+   Numbers.prototype.storeNum = function () {
+      var local_num = 14;        //local variable 
+   };
+
+   Numbers.sval = 10;            //static field 
+   return Numbers;
+}());
+
+console.log("Global num: " + global_num);
+console.log(Numbers.sval);       //static variable  
+
+var obj = new Numbers();
+console.log("Global num: " + obj.num_val);
+
+==========================Operators================================
+------Conditional Operator (?)//ternary operator---------
+Test ? expr1 : expr2
+
+Test - refers to the conditional expression
+expr1 - value returned if the condition is true
+expr2 - value returned if the condition is false
+
+var num:number = -2 
+var result = num > 0 ?"positive":"non-positive" 
+console.log(result)  //non-positivevar num = 12 
+
+---typeof operator-----
+var num = 12 
+console.log(typeof num);   //output: number
+
+===========loops and condtions similar to java=====
+
+The Infinite Loop
+
+for(;;) { 
+   console.log(“This is an endless loop”) 
+}
+
+while(true) { 
+   console.log(“This is an endless loop”) 
+}
+
+-------------------------functions========================
+keyword "function" seems optional in typescript for a method inside a class.
+but mandatory in java script.
+
+var keyword is not used while declaring a var at class level(outside method or block)
+
+///access modifier are same as in java
+
+=======Optional Parameters===============
+
+--A parameter can be marked optional by appending a question mark to its name.
+
+function disp_details(id:number,name:string,mail_id?:string) { 
+   console.log("ID:", id); 
+   console.log("Name",name); 
+   
+   if(mail_id!=undefined)  
+   console.log("Email Id",mail_id); 
+}
+disp_details(123,"John");
+disp_details(111,"mary","mary@xyz.com");
+
+/////If an optional parameter is not passed a value during the function call, the parameter’s value is set to undefined.
+
+=======Default Parameters===============
+
+Function parameters can also be assigned values by default. However, such parameters can also be explicitly passed values.
+
+function calculate_discount(price:number,rate:number = 0.50) { 
+   var discount = price * rate; 
+   console.log("Discount Amount: ",discount); 
+} 
+calculate_discount(1000) 
+calculate_discount(1000,0.30)
+--------------------------------------
+Note - A parameter cannot be declared optional and default at the same time....
+-------------------------------------
+
+
+====Anonymous Function(function without name)=========
+
+
+var res = function(a:number,b:number) { 
+   return a*b;  
+}; 
+console.log(res(12,2)) 
+
+
+============Lambda Functions/Arrow functions/Lambda Expression functions===========
+Lambda refers to anonymous functions(function without name) in programming.short(concise) form of anonymous function.
+
+var foo = (x:number)=>10 + x //single line(curly braces optional), if function body spans multiple lines then {} is used.
+console.log(foo(100))   
+
+var func = (x)=> { 
+   if(typeof x=="number") { 
+      console.log(x+" is numeric") 
+   } else if(typeof x=="string") { 
+      console.log(x+" is a string") 
+   }  
+} 
+
+func(12) 
+func("Tom")
+
+/////The fat arrow notation/lambda notation (=>) - It is also called as the goes to operator
+///Tip - By convention, the use of single letter parameter is encouraged for a compact and precise function declaration.
+
+method with no param:
+
+var disp =()=> { 
+   console.log("Function invoked"); 
+} 
+disp();
+
+
+-var declaration is function scoped and let(also const) declaration is block scoped.
+
+function f(shouldInitialize: boolean) {
+    if (shouldInitialize) {
+        var x = 10;
+    }
+
+    return x;
+}
+
+f(true);  // returns '10'
+f(false); // returns 'undefined'
+
+//The variable x was declared within the if block, and yet we were able to access it from outside that block. 
+That’s because var declarations are accessible anywhere within their containing function, module, 
+namespace, or global scope - all which we’ll go over later on - regardless of the containing block.
+
+
+==To begin, just as in JavaScript, TypeScript functions can be created both as a named function or as an anonymous function. 
+
+
+Optional parentheses for a single parameter:
+
+var display = x=> { 
+   console.log("The function got "+x) 
+} 
+display(12)
+
+On compiling, it will generate following JavaScript code -
+
+//Generated by typescript 1.8.10
+var display = function (x) {
+   console.log("The function got " + x);
+};
+display(12);
+
+
+///most of the java string methods also same as in ts.
+
+=========Array: an array is a collection of values of the same data type.============
+
+static in size, var keyword to declare an array.
+
+var nums:number[] = [1,2,3,3] 
+console.log(nums[0]); 
+console.log(nums[1]); 
+console.log(nums[2]); 
+console.log(nums[3]);
+
+
+var names:string[] = new Array("Mary","Tom","Jack","Jill") 
+
+for(var i = 0;i<names.length;i++) { 
+   console.log(names[i]) 
+}
+
+==Array Traversal using for…in loop===
+
+var j:any; 
+var nums:number[] = [1001,1002,1003,1004] 
+
+for(j in nums) { 
+   console.log(nums[j]) 
+} 
+
+
+
+
+==we can pass array in a method and a method can return the an array:  number[] ,string[] etc
+we can create a new string,number,array using new operator as well.
+
+function disp():string[] { 
+   return new Array("Mary","Tom","Jack","Jill") 
+} 
+ 
+var nums:string[] = disp() 
+for(var i in nums) { 
+   console.log(nums[i]) 
+}
+
+
+=====
+function disp(arr_names:string[]) {
+
+}  
+
+
+=====Tuple(heterogenius array)
+var mytuple = [10,"Hello"];
+
+*******************type script Object (contains set of key value pairs--) **************************
+An object is an instance which contains set of key value pairs.
+
+var person = { 
+   firstname:"Tom", 
+   lastname:"Hanks" 
+}; 
+//access the object values 
+console.log(person.firstname) 
+console.log(person.lastname)
+
+console.log(person[lastname])
+
+=====
+var object_name = { 
+   key1: “value1”, //scalar value 
+   key2: “value”,  
+   key3: function() {
+      //functions 
+   }, 
+   key4:[“content1”, “content2”] //collection  
+};
+
+Example: Objects as function parameters
+
+var person = { 
+   firstname:"Tom", 
+   lastname:"Hanks" 
+}; 
+var invokeperson = function(obj: { firstname:string, lastname :string }) { 
+   console.log("first name :"+obj.firstname) 
+   console.log("last name :"+obj.lastname) 
+} 
+invokeperson(person)
+
+======================
+***************************Array Methods*************************************
+A list of the methods of the Array object along with their description is given below.
+
+S.No.	Method & Description
+1.	concat()
+Returns a new array comprised of this array joined with other array(s) and/or value(s).
+
+2.	every()
+Returns true if every element in this array satisfies the provided testing function.
+
+3.	filter()
+Creates a new array with all of the elements of this array for which the provided filtering function returns true.
+
+function isBigEnough(element, index, array) { 
+   return (element >= 10); 
+} 
+          
+var passed = [12, 5, 8, 130, 44].filter(isBigEnough); 
+console.log("Test Value : " + passed );
+
+4.	forEach()
+Calls a function for each element in the array.
+
+5.	indexOf()
+Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
+
+6.	join()
+Joins all elements of an array into a string.
+
+7.	lastIndexOf()
+Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+
+8.	map()
+Creates a new array with the results of calling a provided function on every element in this array.
+
+var numbers = [1, 4, 9]; 
+var roots = numbers.map(Math.sqrt); 
+console.log("roots is : " + roots );
+
+9.	pop()
+Removes the last element from an array and returns that element.
+
+10.	push()
+Adds one or more elements to the end of an array and returns the new length of the array.
+
+11.	reduce()
+Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.
+
+12.	reduceRight()
+Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.
+
+13.	reverse()
+Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
+
+var arr = [0, 1, 2, 3].reverse(); 
+console.log("Reversed array is : " + arr );
+
+14.	shift()
+Removes the first element from an array and returns that element.
+
+15.	slice()
+Extracts a section of an array and returns a new array.
+
+16.	some()
+Returns true if at least one element in this array satisfies the provided testing function.
+
+17.	sort()
+Sorts the elements of an array.
+
+var arr = new Array("orange", "mango", "banana", "sugar"); 
+var sorted = arr.sort(); 
+console.log("Returned string is : " + sorted );
+
+
+18.	splice()
+Adds and/or removes elements from an array.
+
+19.	toString()
+Returns a string representing the array and its elements.
+
+var arr = new Array("orange", "mango", "banana", "sugar");         
+var str = arr.toString(); 
+console.log("Returned string is : " + str );
+
+20.	unshift()
+Adds one or more elements to the front of an array and returns the new length of the array.

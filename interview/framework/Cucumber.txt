@@ -1,0 +1,54 @@
+
+Comment lines are allowed anywhere in the file. 
+They begin with zero or more spaces, followed by a hash sign (#) and some text.
+Comments do have to start on a new line.
+
+Feature: Guess the word
+
+  # The first example has two steps
+  Scenario: Maker starts a game
+    When the Maker starts a game
+    Then the Maker waits for a Breaker to join
+
+
+It’s strongly recommended you only have a single When step per Scenario. 
+If you feel compelled to add more, it’s usually a sign that you should split the scenario up into multiple scenarios.
+
+Example: Multiple Givens
+  Given one thing
+  And another thing
+  And yet another thing
+  When I open my eyes
+  Then I should see something
+  But I shouldn't see something else
+
+The Scenario Outline keyword can be used to run the same Scenario multiple times, with different combinations of values.
+A Scenario Outline must contain an Examples section.
+
+**********DataTable*************
+a simple data table and see how we might use it.
+
+| firstName   | lastName | birthDate  |
+| Annie M. G. | Schmidt  | 1911-03-20 |
+| Roald       | Dahl     | 1916-09-13 |
+| Astrid      | Lindgren | 1907-11-14 |
+
+As this is a table the natural representation would be a list of a list of strings.
+
+java type: List<List<String>>
+
+[ 
+  [ "firstName", "lastName", "birthDate" ],
+  [ "Annie M.G", "Schmidt", "1911-03-20" ], 
+  [ "Roald", "Dahl", "1916-09-13" ], 
+  [ "Astrid", "Lindgren", "1907-11-14" ] 
+]
+This representation is not very useful. The fields are no longer labeled and the first row has to be discarded. So instead we can convert this table into a list of maps.
+
+java type: List<Map<String, String>
+
+[
+  { "firstName": "Annie M.G", "lastName": "Schmidt",  "birthDate": "1911-03-20" }, 
+  { "firstName": "Roald",     "lastName": "Dahl",     "birthDate": "1916-09-13" }, 
+  { "firstName": "Astrid",    "lastName": "Lindgren", "birthDate": "1907-11-14" } 
+]

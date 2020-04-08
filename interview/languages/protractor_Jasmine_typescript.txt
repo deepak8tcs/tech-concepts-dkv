@@ -1,0 +1,69 @@
+
+##JASMINE FOR NODE.JS
+Add Jasmine to your package.json
+npm install --save-dev jasmine
+
+Initialize Jasmine in your project
+node node_modules/jasmine/bin/jasmine init
+Set jasmine as your test script in your package.json
+
+Run your tests
+node node_modules/jasmine/bin/jasmine.js
+
+or
+npm test
+
+#==========================
+
+add @types for jasmine
+npm install --save-dev @types/jasmine @types/jasminewd2
+
+npm i @types/jest
+and add it to tsconfig types field
+
+to generate tslint file:
+./node_modules/.bin/tslint --init
+An alternative to manually creating and populating the tsconfig.json file is running: 
+tsc --init.
+
+installing typescript and ts-node
+npm install typescript ts-node
+
+npm install protractor-beautiful-reporter --save-dev
+============
+expect(false).toBe(true);
+expect(false).not.toBe(true);
+
+to view jasmine version
+npm view jasmine
+==================================
+# Pre-requisites
+Download and install Chrome browser.
+Download and install Node.js:
+Download and install any Text Editor like Visual Studio Code
+
+# Setup Scripts
+# To intall below items we may have to come out of client network or use the required proxy with command
+--proxy http://xyz.com:8080
+
+Copy the project repository into a folder
+Go to Project root directory
+install package.json Dependencies: npm install --proxy http://xyz.com:8080
+Install Protractor locally: npm install protractor
+Update necessary binaries of webdriver-manager: node_modules/.bin/webdriver-manager update
+All the dependencies from package.json and ambient typings would be installed in node_modules folder.
+
+# How to write Test
+Add new spec under test folder
+Name the file as Spec.ts (e.g. DropdownSpec.ts)
+Create page object files under src/pages as (e.g. DropdownPage.ts)
+Create test data related files under src/testData (input.ts)
+Create common use functions files under src/utils (CommonFunctions.ts)
+Create any other required folder/files as per your need under src and test folders.
+
+# How to Run Test
+Run complete Test Suite: npm test
+
+# How to check execution reports:
+Under test-results folder we can open TestResult.html file to check the reports
+

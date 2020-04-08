@@ -1,0 +1,173 @@
+git pull vs git fetch
+git rebase
+what is index,tag
+
+what is HEAD and master
+HEAD is a reference to the last commit in the currently check-out branch. You can think of the HEAD as the "current branch". When you switch branches with git checkout, the HEAD revision changes to point to the tip of the new branch.
+=================
+working directory------git add-->Staging Area----git commit--->Git repository
+============
+check-out and check-in of code
+remote repo->local repo->fork repo->remote repo
+-----------------------------------
+git help //to see common git commands
+git log //to see entire commit history //latest being on top
+git clone <fork-url>
+
+git remote add <alias> <master-url>
+eg: git remote add upstream <remote-master-url>
+git remote update <alias1> <alias2>
+
+git remote -v
+
+git pull upstream master  //to pull the latest code from the remote master.
+git status //List which files are staged, unstaged, and untracked(new files).
+git add . //To stage all changed files( to add them in staging area)
+git add <file path with name> // git add src/main/resources/application-VnV.yml
+git add <file-name-1> <file-name-2> <file-name-3>  //give a list of space-separated file names
+git checkout . //to discard changes in working directory
+git checkout <file path with name> 
+ 
+git add xyz.java
+
+git commit -m "<commit-message"> // to commit the files from staging area.
+
+//we can do git pull upstream master here after commit
+git push origin master
+
+before pushing always do git pull upstream master to get the latest code.
+After this you might get merge conflicts which you will have to resolve manually. 
+
+git checkout 19.3  //to switch branches(locally), copies the mentioned upstream branch name & creates the local-copy with the same branch name
+also it will ask you to commit if you have any uncommited changes.
+
+git checkout master
+
+git push //by default pushes on master of forked(origin) repo
+git push origin master
+git push origin 19.3  //creates the branch 19.3 and pushes the code if branch is not on forked repo
+
+git branch -d 19.3 (<nameOfBranch>) //to delete the local branch
+
+//stashing code changes: //only staged code can be stashed: staged(git add .)
+
+git add .
+git stash  //stored in stack  //save is default if dont give any value after stash//to give a custom msg to stash: git stash save "updated the offline file"
+git stash -u //only way to stash untracked files
+git stash list //shows the list of stashes
+git stash pop //pops most recent stash i.e stash@{0} 
+git stash pop stash@{1} //to pop any specific stash
+git stash apply //applies most recent stash i.e stash@{0} 
+git stash apply stash@{1} //to applies any specific stash
+git stash drop <stash_id>.
+git stash clear.
+If you no longer need a particular stash, you can delete it with: $ git stash drop <stash_id>. Or you can delete all of your stashes from the repo with: $ git stash clear.
+
+Note-after stashing the changes "git status" will not show any changesand once we pop, it starts displaying
+Note-pop vs apply:
+pop removes the changes from list and applies on working directory but apply only applies not removes changes from list.
+git init //to create an empty git repo
+
+=================git log==
+git log -<limit>  //Limit number of commits by <limit>. E.g. git log -5 will limit to 5 commits.
+git log -p //Display the full diff of each commit.
+
+git log --author=”<pattern>” //Search for commits by a particular author
+
+git log --author="deepak" -p -2
+
+
+==============
+git checkout -- <filename> to unstage files to be committed.
+
+git reset HEAD -- <filename> to remove the file from being committed
+/////////////Undoing changes///
+
+git revert <commit> //Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.
+git reset <file> //Remove <file> from the staging area, but leave the working directory unchanged. 
+This unstages a file without overwriting any changes.
+
+========================
+Branch commands:
+
+git checkout -b <branch-name>: to create a new branch
+
+git branch : to see all the local branches
+
+git branch -a : to see all the branches of local and remote.
+
+git push origin <branch-name> to create the branch in the fork with the code of local branch.
+
+git checkout master// to go master branch of local copy
+git merge <branchToBeMerged> //Merge <branch> into the current branch.
+git rebase <branchToBeMerged>  // rebase is alternative of merge. diff is in the rewriting of commit history
+
+To merge one branch into another branch.
+
+First go to the destination branch then
+
+git merge source-branch-name -m "<merge-message>"
+=====================
+git reset //Reset staging area to match most recent commit, but leave the working directory unchanged.
+git reset --hard //Reset staging area and working directory to match most recentcommit and overwrites all changes in the working directory
+
+
+git reset --hard
+git push -f origin master (when u r sure what you are pushing and changes are right)
+
+//
+git fetch <remote> <branch> //Fetches a specific <branch>, from the repo. Leave off <branch> to fetch all remote refs.
+git pull <remote> //Fetch the specified remote’s copy of current branch and immediately
+merge it into the local copy.
+
+==============
+Branches
+Branches are used to create another line of development. By default, Git has a master branch, which is same as trunk in Subversion. Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back with the master branch and we delete the branch. Every branch is referenced by HEAD, which points to the latest commit in the branch. Whenever you make a commit, HEAD is updated with the latest commit.
+
+Tags
+Tag assigns a meaningful name with a specific version in the repository. Tags are very similar to branches, but the difference is that tags are immutable. It means, tag is a branch, which nobody intends to modify. Once a tag is created for a particular commit, even if you create a new commit, it will not be updated. Usually, developers create tags for product releases.
+
+=>A tag is like a branch that doesn't change. Unlike branches, tags, after being created, have no further history of commits.
+=>branch is mutable reference but tag is immutable reference
+
+git show <tagName>
+https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
+
+Pushing and Pulling
+Since a tag (either annotated or lightweight) is just a reference on your local repository, it is not sent up by default to the remote repository during pushes. (This is one observable difference between Git and Hg.) Instead, you can git push the tag individually, or you can run git push --tags which will push all tags. For “release” tags (e.g. V1.0.0) it is conventional for these to be annotated tags; it is relatively rare that you will push a lightweight tag to a central repository.
+
+For pulling, any tags associated with your current branch will be fetched when you check it out. This may result in not having all the tags in your local repository that the remote repository has. If you'd like to fetch them all, you can do git fetch --tags to pull them all in, or git fetch tag to pull a single one.
+
+Git Stash operation:
+
+Suppose you are implementing a new feature for your product. Your code is in progress and suddenly a customer escalation comes. Because of this, you have to keep aside your new feature work for a few hours. You cannot commit your partial code and also cannot throw away your changes. So you need some temporary space, where you can store your partial changes and later on commit it.
+
+In Git, the stash operation takes your modified tracked files, stages changes, and saves them on a stack of unfinished changes that you can reapply at any time.
+
+===
+****PULL vs Fetch********************
+In the simplest terms, git pull does a git fetch followed by a git merge.
+In its default mode, git pull is shorthand for git fetch followed by git merge FETCH_HEAD.
+
+Update your local repo from the remote (but don't merge):
+git fetch 
+
+After downloading the updates, let's see the differences:
+git diff master origin/master 
+
+If you're happy with those updates, then merge:
+
+git pull
+
+When you use pull, Git tries to automatically do your work for you. It is context sensitive, so Git will merge any pulled commits into the branch you are currently working in. pull automatically merges the commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
+
+When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your master branch, you use merge.
+
+Git clone: to clone a repo:
+git clone git@github.com:whatever/something.git
+Git clone additionally creates a remote called ‘origin’ for the repo cloned from, sets up a local branch based on the remote’s active branch (generally master), and creates remote-tracking branches for all the branches in the repo
+
+***********Rebase vs merge****************
+In Git, the rebase command integrates changes from one branch into another. It is an alternative to the better known "merge" command.
+
+Most visibly, rebase differs from merge by rewriting the commit history in order to produce a straight, linear succession of commits.
