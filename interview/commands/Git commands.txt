@@ -171,3 +171,8 @@ Git clone additionally creates a remote called ‘origin’ for the repo cloned 
 In Git, the rebase command integrates changes from one branch into another. It is an alternative to the better known "merge" command.
 
 Most visibly, rebase differs from merge by rewriting the commit history in order to produce a straight, linear succession of commits.
+
+Rebasing alter individual commits by rewriting project history by creating new commits for each commit in the original branch, 
+which in turn results in linear history with no divergent branches.
+
+So merge maintains divergent branches history but rebase doesn't. It creates new commits in a linear way on source branch for divergent branch commits.
