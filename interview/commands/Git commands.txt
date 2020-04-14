@@ -175,6 +175,6 @@ Most visibly, rebase differs from merge by rewriting the commit history in order
 Rebasing alter individual commits by rewriting project history by creating new commits for each commit in the original branch, 
 which in turn results in linear history with no divergent branches.
 
-=>So merge maintains divergent branches history but rebase doesn't. It creates new commits in a linear way on source branch for divergent branch commits.
+So merge maintains divergent branches history but rebase doesn't. It creates new commits in a linear way on source branch for divergent branch commits.
 
-Rebase is same as merge  except the fact that rebase rewrites the commit history in linear way & doesn't maintain the history of divergent branches.
+=>Rebase is same as merge  except the fact that rebase rewrites the commit history in linear way & doesn't maintain the history of divergent branches.
