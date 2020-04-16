@@ -1,2 +1,2 @@
 All Aggregate functions (including count) works only on non-Null values.
-They ignore NULL values.
+They ignore NULL values in calculation.
