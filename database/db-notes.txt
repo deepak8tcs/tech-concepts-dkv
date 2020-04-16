@@ -1,2 +1,10 @@
-All Aggregate functions (including count) works only on non-Null values.
+-All Aggregate functions (including count) works only on non-Null values.
 They ignore NULL values in calculation.
+
+-where is used with column name.
+ Eg where price=25
+
+-having is used with aggregate function. 
+Eg having sum(price) =100
+
+
