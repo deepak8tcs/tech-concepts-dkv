@@ -7,4 +7,6 @@ They ignore NULL values in calculation.
 -having is used with aggregate function. 
 Eg having sum(price) =100
 
+-Semicolon is not mandatory at the end of sql statement
+ but it's a good practice to use it.
 
