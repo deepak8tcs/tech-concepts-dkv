@@ -1,0 +1,85 @@
+
+Sales cloud app: helps companies to manage their sales activities like accounts,contacts, leads & opportunities etc
+
+
+Terminology:
+
+Key standard Objects:
+
+Accounts: 
+To store info of prospects or existing company you do business with.
+ accounts are  "Backbone" of information.
+
+Contacts:
+To store the info of person (executives or Representatives) who works at those companies.
+
+Leads: A combination of accounts & contacts.
+
+Opportunities: 
+To store the deals.
+
+Products: 
+To store the product details that we sell. we can include products(qty,price) 
+in opportunity which will automatically calculate the deal amount.
+
+Cases: 
+To track customer's feedback, problems, questions after the sale.
+-----------------------
+campaign object:
+To manage marketing/brand building related stuffs/campaign for your company.
+
+price book object:
+to store the price details of products,
+eg we can store different prices(standard/discounted/special) for same product in different price book.
+
+Quotes object:
+we can send quotation to our customers for a deal. one deal can have multiple quotes.
+
+Contracts object: 
+stores contract details.
+when deal is done the contract needs to be signed.
+products(qty,rates), durations,dates,terms & conditions etc.
+===============================================================
+
+Records can be of type accounts record, contact record etc.
+
+---------------------------------------
+***Leads: 
+To store the information related to potential customers of your business.
+
+prospects(they do not exist in system)
+
+Lead creation :
+Enter  person & company name & details about them like email,ph no. employee strength etc. 
+
+Life cycle of a Lead:
+1. Creation
+2. Conversation into accounts, contacts or opportunities.
+3. After conversation leads are removed from leads list. 
+
+
+Notes: Opportunity may or may not be created upon conversion. it's created only if selected
+ (select check box & give name) to create opportunity while conversion.
+
+-Leads can come from real-life interactions, such as meeting someone at a conference; 
+or they can come from online interactions, such as when someone fills out a form on your website requesting more .
+
+
+- A lead is considered to be a contact when a direct two-way communication starts.
+ So, when the lead expresses interest and the salesperson actively follows up, it becomes a contact. 
+A contact can even be an old customer, or a friend who is in a position to influence your target company's buying decision.
+
+
+-we can add a custom field(text box,drop down,check box etc) from app set up to any objects(leads, account, contacts)
+
+-----------------------------------------------------
+Two client interface (UI):
+
+lightening (by default)
+classic (original UI)
+
+Classic is the original Salesforce interface, now in its most up-to-date incarnation. 
+Lightning, meanwhile, is the brand new UI that completely changes the Salesforce experience. 
+you should pick the Lightning version, as it offers the most modern features.
+--------------------------------------------------------------------------------
+
