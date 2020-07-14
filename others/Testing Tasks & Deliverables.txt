@@ -1,0 +1,68 @@
+
+Manual:
+
+
+Test Plan & Strategy design & Sign Off
+
+Test case writing & Sign off
+
+Test data indentification & creation
+
+Smoke Test for Initial Build
+
+Test Execution
+
+Defect Retest/Regression testing
+
+Publish Test Execution Results & Reports
+
+QA Sign off
+
+Other deliverables, iff discussed any with clients
+===========================
+Manual testing Deliverables:
+
+Test Plan
+Test cases
+Test Execution suite with test results
+Test execution status & Reports
+Documented defect/Defect report
+QA Sign Off
+
+
+
+************************************************************
+
+Automation: Value Propositions to client
+
+Understanding Requirement & Process:
+
+Test automation Strategy design & Sign Off
+POC on suitable framework(UI/API) and demo
+Design an Automation framework
+Maintin and Enhance the framework
+
+Scenario writing & Automation
+Create smoke suite
+create regression suite
+
+Running the Regression batch/smoke suite regularly or depending on the need.
+
+Pushing report into some test management tool for documentation.
+defect management
+
+Sharing the batch execiution results with the team
+
+doing needed POCs/Suggesting improvements
+========================
+
+Automation Deliverables:
+
+
+Test automation strategy
+Automation framework
+TC & Automation scripts
+Test Execution Reports
+Documented defect/Defect report
+
+

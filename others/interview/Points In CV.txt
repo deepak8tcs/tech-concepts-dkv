@@ -1,0 +1,155 @@
+﻿
+
+********Tools/Framework/Process************
+
+Git : Version control system.
+
+Git is a distributed version-control system for tracking changes in source code during software development.
+It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.
+ 
+*************************
+GitHub: (Repository hosting service)
+
+Its website/company which provides services for hosting ”source code reposities”.
+
+Uses git for version control.
+
+ *********************************
+
+BitBucket: similar to GitHub (Repository hosting service)
+
+But It can use either of mercurial or git version control system.
+
+it's a tool/website which hosts source code repository similar to git hub.
+
+git, mercury: version control tool.
+
+Bitbucket is more flexible than Github.
+
+While GitHub comes with a lot of features and allows you to create your own workflows, 
+BitBucket has more flexibility built in. For example, BitBucket gives you more options about the 
+version control system that you use (incorporating Mercurial as well as Git).
+
+***********************
+
+Git GUI Client: A Git client is some software to work with git repositories, both remote and local
+e.g. 
+GitHub Desktop
+SourceTree
+
+
+*********************************
+
+Other terms:
+
+Selenium vs Serenity. Which one is better & why?
+
+Cucumber vs Jbehave. & which one is better & why?
+
+**************************************************
+
+
+ 
+
+Katalon Studio is an automation testing solution developed by Katalon LLC. The software is built on top of the open-source
+automation frameworks Selenium, Appium with a specialized IDE interface for web, API, mobile and desktop application testing.
+
+Strength:
+
+1.           No licensing and maintenance fees required (paid dedicated support services is available if needed).
+
+2.           Integrating necessary frameworks and features for quick test cases creation and execution.
+
+3.           Built on top of the Selenium framework but eliminating the need for advanced programming skills required for Selenium.
+
+Limitations:
+
+1.           Emerging solution with a quickly growing community.
+
+2.           Feature set is still evolving.
+
+3.           Lack of choices for scripting languages: only Java/Groovy is supported.
+
+ ****************************************
+
+Appium:
+
+Appium is an open source automation tool for running scripts and testing native applications,
+ mobile-web applications and hybrid applications on Android or iOS using a webdriver.
+
+Groovy:
+
+Apache Groovy is a Java-syntax-compatible object-oriented programming language for the Java platform. 
+It is both a static and dynamic language with features similar to those of Python, Ruby, and Smalltalk.
+
+Groovy scripts can use any Java classes. They can be compiled to Java bytecode (in . class files) that
+ can be invoked from normal Java classes. The Groovy compiler, groovyc, compiles both Groovy scripts 
+ and Java source files, however some Java syntax (such as nested classes) is not supported yet. file extension: xyz.groovy
+
+ 
+*******************************************************************************
+Amazon DynamoDB: used in AWS & is a NoSQL database service that supports key-value and document data structures.
+ 
+****************
+Docker:
+
+Docker is a set of platform as a service (PaaS) products that uses OS-level virtualization 
+to deliver software in packages called containers. Containers are isolated from one another 
+and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+
+Standard packaging of application using docker (Industry standard now). Easily shippable & deployable.
+
+PODA: Package once Deploy Anywhere
+
+Dockerfile (contains path for code’s jar file, contains dependencies, commands etc)->Docker Engine->
+Docker Image (can be pushed on dockerhub.com or any other docker image repo)
+
+We can spawn the container (run time environment, lightest OS inside VM, have IP & Port, 
+runs as a process inside RAM of VM(Host)/EC2) using docker image.
+
+The software that hosts the containers is called Docker Engine
+
+Docker Provides Simple Commands You Can Use To Build, Start, Or Stop Containers.
+
+ *******************************
+
+Kubernetes: (Job like Football coach, choreographer, keeps on monitoring each node/pod)
+
+Orchestrator for micro-services apps.
+
+Kubernetes is an open-source container-orchestration system for automating application deployment, scaling, and management.
+It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation.
+
+ 
+
+=>uses docker-compose.yml file
+
+=> docker images are used as input
+
+ 
+
+Kubernetes Cluster(k8s cluster): 3 node(VM) cluster, 2 node(VM/minions) cluster etc(1 master node, other slave node)
+
+Pods: containers are wrapped in pods in k8s. docker container is used to be naked.
+
+Pod->Env(container): 1 pod can have multiple containers if containers are tightly coupled. If containers are independent use one container per pod.
+
+Kubernetes uses deployment yml files for each container.
+
+GCS: Google Cloud service
+
+ACS: Azure Cloud service (Microsoft)
+
+ECS: Elastic Cloud service (Amazon)
+
+ *****************************************
+
+What is a Container?
+
+A standardized unit of software
+
+A container is a standard unit of software that packages up code and all its dependencies so the application
+runs quickly and reliably from one computing environment to another.
+
+Containers are Lightweight: Containers share the machine’s OS system kernel and therefore do not require 
+an OS per application, driving higher server efficiencies and reducing server and licensing costs

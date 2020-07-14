@@ -1,0 +1,48 @@
+Test Estimation:
+
+Factors that should be considered:
+
+Test case execution factors: 
+
+No. of test cases(scenarios)
+complexity of test cases
+plateform/os/browser,
+No. of resources.
+
+Pre-Test case execution factors: 
+Application/req understanding,test plan,writing test scenario,testcase writing, tracibility, review, coordination/meetings.
+then execution, defect reporting, Retest/Regression, QA Sign off, UAT/PROD Support
+----
+contingency (unpredictability ) factor/adjustment factor:
+buffer time, defect turnaround time, resource buffer, late code delivery.
+=====
+
+estimation is always an estimation, its never an accurate data.
+it's an art rather than a science.
+there might be deviation ,learn from it and move ahead.
+earlier experience helps a lot.
+estimation may go wrong. I won't deny.
+
+quantify by no. of pages. or 
+no. of uses cases.
+----
+no. of test cases
+&  complexity of test cases.
+
+high complexity: 8 to 10 test cases per day (writing or execution)
+med: 30 (w/E)
+low: 100-200 field level validation etc
+
+when in doubt try to always overestimate & never under estimate.
+
+contingency factor: 30% industry standard. I consider 20 to 25%
+always include contingency factor.
+keep 20 -30% time on top of the testing estimation as extra bandwidth.
+
+testing is a reactive job , we always rely others and if we get code for testing late , we get less time to finish.
+
+in case things didn't go well, sit down and analyse how to avoid entering the same situation again.
+---
+-Test strategy should remain static.
+-Test plan should be updated (debatable) to reflect any devitation from original plan.
+=>planning & control is continuous activity.

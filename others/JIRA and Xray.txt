@@ -1,0 +1,101 @@
+JIRA
+System software:
+
+JIRA is a tool developed by Australian Company Atlassian. It is used for bug tracking, issue tracking, and project management.
+
+
+
+Atlassian: australian softwares company:
+1.Jira S/W: software project management tool (agile) like Rally.
+Jira software(manage s/w dev project),
+ 
+Jira core(Business project,Marketing/HR operation)
+Jira service desk.(manage IT help desk)
+
+2.confluence: team collaboration & wiki product.
+3.Bit bucket
+
+
+====
+Jira Software:
+create issues(epic,story,task,bug,Test plan, Test Execution, test set etc)
+for any other option, Jira admin can add in dropdown.
+
+-Jira project is collection of issues.
+it's a single place to manage your work.
+
+Jira supports both scrum & kanban, basic software development
+
+Issues->search issue-apply filter on different columns
+basic n advance search in Jira
+new filter button resets the filter
+save as the filter in favorite filter
+
+Issue Transition: workflow of issue: status:
+ToDo- in progress- Done.
+workflow of an issues is customizable
+design -development- testing-done
+
+applied filter can be used in pie chart generation on dashboard.
+dashboard for how many defects created vs resolved in last 30 days.
+
+we can log hrs spent on particular issue/task once it's completed. helpful in turndown chart.
+===
+GIT Lab ci/cd can be used to update automated bdd test cases from repo to jira/x-ray tool
+
+=========
+Zephyr is also a test management tool/jira plugin.
+X-Ray: it's a Jira plugin for Test management inside Jira.
+functions:
+1.create manual, automated (cucumber) scenarios. 
+2.create test sets,
+3.create test execution plan(contains test-sets, hv begin date)
+- Actually test execution issue is linked to test plan issue. and we run the test cases present inside test execution issue.
+for cycle 2, we hv to create new instances of test execution inside same test plan.
+4.pass manual test cases using Run option. fail a step & log bug n link with step.
+pass automated test cases using import json result option.
+
+5.Associate tests with requirements:Linking
+6. Project analysis & reporting.
+dashboard.
+7. xRay reports. export in pdf/word format.
+====
+we can create a test execution with a single test case which was failed initially and pass it.
+
+********************************************************************
+Xray Jira:
+
+Featured snippet from the web
+Xray for Jira is a complete, full-featured Atlassian verified test management add-on for Jira. 
+
+
+Record x-ray meeting.
+---
+-folder structure for test cases in test plan(like ALM test plan)-tree structure
+SSO OSvC To Engagent/SFTP
+
+-write new test cases, bulk update testcases
+any CSV template
+
+-how to manage cycle 1 & cycle2 of test execution inside test plan.
+
+-Xray Reports that you use:
+where to see overall execution status:
+like all test cases passed(if no story, likes regression)
+or all stories/requirements passed.
+
+req project 
+test project
+tracibility of req to test case
+
+====
+ALM :
+1. Requirements:/epic, stories/feature
+2. Test plan: test cases
+3. Test Lab: test sets (contains pulled test cases from test plan )   , execution happens here.
+4. Defects:
+====
+Plan
+WBS
+Be ready for giving testing estimates.
+highlight Risk, if any
