@@ -13,6 +13,8 @@ Verify all invalid values(out of limit, invalid format,blank etc)
 2)Request Header:
 
 Verify all valid and invalid combination of input in request header
+Invalid content Type,accept type, any other header value,
+ missing header key -value or missing/blank value 
 
 3) Request body: 
 Verify all allowed/ not allowed values, length,limit, combination of two or more values etc
