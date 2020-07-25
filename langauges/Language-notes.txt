@@ -1,1 +1,24 @@
 
+Java vs Python:
+Diff:
+1. One of the biggest differences between Python and Java is the way that each language handles variables. 
+Java is statically typed language(variable type is checked at compile time, also var are assigned data type while writing a code)
+Python is dynamically typed language(variable type is checked at run time, no type needed while writing code))
+
+Similarity:
+Both are open source language (we can use openJDK without licence)
+
+
+===
+Dynamic typing is the act of checking for type errors as code is executed.
+Python will not throw error for below as else never executes
+But Java will throw complied time error.
+foo = "a string"
+eggs = 2
+if eggs + 2 > 3: 
+    print("Well Done")
+else:
+    print(foo + 1)
+
+The takeaway: Python’s dynamic typing is easier for beginners.
+Java’s static typing reduces the risk of undetected errors.
