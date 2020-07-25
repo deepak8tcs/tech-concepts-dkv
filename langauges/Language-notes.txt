@@ -1,3 +1,5 @@
+Java: source code--(java compiler))---byte code(plateform independent)---(JVM, plateform dependent)----machine code(binary code in 0,1 form)
+
 
 Java vs Python:
 Diff:
@@ -11,17 +13,24 @@ Python is dynamically typed language(variable type is checked at run time, no ty
 
 4. Python has straightforward syntax ,easy to learn & use. Java has complex syntax & harder to learn.
 
+5. Java is compiled language but Python is interpreted.
+
+6. Java is generally used in enterprise applications while Python is general purpose language.
+
 
 Similarity:
 Both are open source language (we can use openJDK without licence)
 Both has excellent online communities & supports
 Both have cross platform support
+Both are object oriented language.
 
 
 ===
+-In Python compilation happens at run time.
 -Python is one of the most popular languages for data science, machine learning & AI.
 -Python can be used to develop android apps, in DevOps scripting
 -Websites & services like youtube, Spotify, quota are written/coded in Python.
+
 
 -Dynamic typing is the act of checking for type errors as code is executed.
 Python will not throw error for below as else never executes
