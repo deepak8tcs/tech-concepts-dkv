@@ -1,4 +1,6 @@
-Java: source code--(java compiler))---byte code(plateform independent)---(JVM, plateform dependent)----machine code(binary code in 0,1 form)
+Java: source code--(java compiler))---byte code(plateform independent)---(JVM/Java Interpreter, plateform dependent)----machine code(binary code in 0,1 form)
+
+Python: source code---(Python interpreter: compile & then interepret line by line)---machine code
 
 
 Java vs Python:
@@ -30,6 +32,7 @@ Both are object oriented language.
 -Python is one of the most popular languages for data science, machine learning & AI.
 -Python can be used to develop android apps, in DevOps scripting
 -Websites & services like youtube, Spotify, quota are written/coded in Python.
+- iOS apps are written in Swift language while android apps in Java (preferred by Apple, Google)
 
 
 -Dynamic typing is the act of checking for type errors as code is executed.
