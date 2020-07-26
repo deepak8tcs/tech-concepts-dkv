@@ -47,3 +47,23 @@ else:
 
 The takeaway: Python’s dynamic typing is easier for beginners.
 Java’s static typing reduces the risk of undetected errors.
+
+
+*********************
+Java vs Java script:
+1.Java is mainly used for backend, JavaScript mainly for front end
+
+2.Allows better security as compared to JavaScript
+
+3.Java is Compiled vs. JavaScript is Interpreted language
+
+4. Java has Static vs javascript has Dynamic Type Checking.
+5. JavaScript is a scripting language that typically runs in the browser
+and makes web pages dynamic and interactive.
+Today JavaScript is also quickly growing as a server-side technology since the release of Node.js in 2009.
+
+Similarities:
+Both are object oriented language
+Both can be used for front end development. Java has applet but now not being used due security concern.
+Both can be used for back end(server side scripting) development. Java is known but after node js arrival JavaScript can also be used.
+
