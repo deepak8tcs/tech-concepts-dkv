@@ -67,3 +67,14 @@ Both are object oriented language
 Both can be used for front end development. Java has applet but now not being used due security concern.
 Both can be used for back end(server side scripting) development. Java is known but after node js arrival JavaScript can also be used.
 
+*****************************
+JavaScript(.js) vs Typescript(.ts):
+
+Typescript is super set of JavaScript. JavaScript + some additional features.
+Typescript is pure oop language, JavaScript is oo scripting language.
+TypeScript has a feature known as Static typing but JavaScript does not have this feature.
+Typescript is transpiled into JavaScript.
+TypeScript gives support for modules whereas JavaScript does not support modules.
+
+TypeScript support optional parameter function but JavaScript does not support optional parameter function.
+
