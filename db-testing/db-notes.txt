@@ -22,7 +22,19 @@ Eg having sum(price) =100
 
 -Semicolon is not mandatory at the end of sql statement
  but it's a good practice to use it.
+ 
+ ======
+ MySQL LIMIT clause:
+ 
+ The LIMIT clause is used in the SELECT statement to constrain the number of rows to return.
+ The LIMIT clause accepts one or two arguments.
+ The values of both arguments must be zero or positive integers.
 
+SELECT select_list FROM table_name LIMIT [offset,] row_count;
+SELECT select_list FROM table_name LIMIT 3; //here record is returned from 1st row(offset 0 )
+
+The offset(starting index) specifies the offset of the first row to return. The offset of the first row is 0, not 1.
+The row_count specifies the maximum number of rows to return.
 ================================================================
 Why DB Testing? : To increase the robustness of data.
 
