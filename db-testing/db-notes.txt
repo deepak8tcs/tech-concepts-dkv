@@ -1,3 +1,16 @@
+SQL is pronounced as "si:kwal". (or Ess-cue-ell )
+Initially called SEQUEL (Structured English Query Language).SEQUEL was later renamed to SQL by dropping the vowels
+
+Subquery vs Joins:
+same thing can be achieved using both
+but join performance is better in subsequent queries as query plan is created for join by DB engine and saved.
+next execution is faster.
+
+
+---
+//if qty is null show it as 0
+Select Name, IS NULL(Quantity, 0) from tab1; 
+===================
 -All Aggregate functions (including count) works only on non-Null values.
 They ignore NULL values in calculation.
 
@@ -10,3 +23,30 @@ Eg having sum(price) =100
 -Semicolon is not mandatory at the end of sql statement
  but it's a good practice to use it.
 
+================================================================
+Why DB Testing? : To increase the robustness of data.
+
+Types of DB testing: 
+1. Structural(Schema testing using mapping sheet which contains table ,columns attributes/ like col data type,length,constrains(Nullable,PKey/FKey,any B.Rule etc) )
+2. Functional (data correctness. e.g. truncation of values,-ve age,null value in mandatory fields, business rules working, ACID Prop validation)
+3. Non-functional(Performance:load,stress,volume, Security: storing encrypted data)
+
+
+Functional testing:
+Insert: Verify values inserted from UI/API is inserted in respective DB fields (use select query and compare with data inserted)
+Update:Verify values updated from UI/API is updated in respective DB fields (use select query and compare with data updated)
+Delete:Verify deleted record from UI/API is also deleted from DB(use select query )
+
+alternate scenarios:
+verfiy insert/delete/update directly done in DB are reflected in UI/API as well
+
+ACID Properties (DB Transaction properties):
+
+A transaction in a database system must maintain Atomicity, Consistency, Isolation, and Durability
+− commonly known as ACID properties − in order to ensure accuracy, completeness, and data integrity.
+
+Atomicity: txn property all or nothing
+Consistency: one coststent state to another
+Isolation: one txn should not affect other
+Durability: changes done should be permanent
+==========================================================================================
