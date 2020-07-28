@@ -32,6 +32,7 @@ Eg having sum(price) =100
 
 SELECT select_list FROM table_name LIMIT [offset,] row_count;
 SELECT select_list FROM table_name LIMIT 3; //here record is returned from 1st row(offset 0 )
+SELECT select_list FROM table_name LIMIT 5,4; //here 4 records are returned staring from 6th row(offset 5 )
 
 The offset(starting index) specifies the offset of the first row to return. The offset of the first row is 0, not 1.
 The row_count specifies the maximum number of rows to return.
