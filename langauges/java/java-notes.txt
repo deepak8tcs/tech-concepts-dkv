@@ -1,0 +1,38 @@
+Programs:
+Fibonacci numbers:
+By definition, the first two Fibonacci numbers are 0 and 1, and each remaining number is the sum of the previous two.
+Some sources omit the initial 0, instead beginning the sequence with two 1s. 
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
+
+//program-for-nth-fibonacci-number. e.g. Input  : n = 4, Output : 3
+//zeroth fib no: 0
+
+static int fib(int n) 
+    { 
+        int a = 0, b = 1, c; 
+        if (n == 0) 
+            return a; 
+        for (int i = 2; i <= n; i++) 
+        { 
+            c = a + b; 
+            a = b; 
+            b = c; 
+        } 
+        return b; 
+    } 
+    
+    //System.out.println(fib(5)); //5th fibno: 5
+    
+    //To print first 5 fib no.:
+    
+     int a = 0, b = 1, c; 
+        sop(a);
+        sop(b)
+        for (int i = 2; i <= 5; i++) 
+        { 
+            c = a + b; 
+            sop(c);
+            a = b; 
+            b = c; 
+      
+        } 
