@@ -25,6 +25,7 @@ Eg having sum(price) =100
  
  =========
  ***JOINs***
+ In case of Inner join, record filtering happens on both tables. In case of left join , filtering happens on right table & vice-versa.
  
  Condition in ON vs WHERE clause: Both used for filtering the records.
  
@@ -32,7 +33,7 @@ Eg having sum(price) =100
  but for Outer JOIN they are not equivalent.
  
  ON: Filters Before joining the tables
- WHERE: filters after joining the tables
+ WHERE: filters after joining the tables (in case of left join , filtering happens on right table & vice-versa)
  
 
 SELECT * FROM Orders LEFT JOIN OrderLines ON OrderLines.OrderID=Orders.ID 
@@ -50,7 +51,7 @@ The first will return all orders, but only order 12345 will have any lines assoc
    | 12346    |NULL| only for oid 12345, lines will be returned, not for any other orderid even if they are present/matched in 2nd table
    | 12347    |NULL| 
  
- The second will return an order and its lines, if any, for order number 12345.
+ The second will return an order and its lines, if any, for order number 12345.  //preffered
 
    | Oid      |OlinesColumns|
    |----------|----|
