@@ -1,0 +1,41 @@
+TDD(focus on unit testing,developer oriented) vs BDD (acceptance testing, end user oriented )
+Vs ATDD(Acceptance Test Driven Development, extension of TDD, like BDD but not in GWT format):
+
+BDD is in a more readable format by every stake holder since it is in English,
+unlike TDD test cases written in programming languages such as Ruby, Java etc. 
+BDD explains the behavior of an application for the end user while TDD focuses on how functionality is implemented.
+
+
+As the name implies, Test-Driven Development (TDD) depends heavily on writing tests.
+More specifically, you write tests (in the form of unit tests) before writing a single line of code.
+
+But how does TDD work? In a nutshell, you follow these 6 steps:
+
+1. Create a test. Take one of your app’s requirements and create the needed tests. This way, your team doesn’t jump right into programming but has to go deeper into the given specification.
+
+2. Run the tests and see if they all fail. You haven’t written any code yet, so all tests should all fail. If tests pass, you already have similar functions in your project and need to investigate whether you can reuse them.
+
+3. Write the code. Now it’s time for your developers to bring the feature to life!
+
+4. Test the code. Rerun your tests. Do they all pass? If so, you have completed the development of the feature and met all requirements.
+
+5. Refactor. Time to clean up the code and make it more efficient by following your company’s code and style guidelines.
+
+6. Repeat the steps. This last step is only needed if your team needs to implement a new feature in the existing component, or if the requirements have changed.
+Your team works through these steps for every requirement and every piece of code it writes.
+
+
+BDD:
+
+Rather than focusing on testing the implementation of code, Behavior-Driven Development (BDD) aims to validate scenarios and behaviors.
+However, you may find some similarities with TDD.
+For example, you also follow the six steps described above to ensure that quality code is created.
+
+ATDD:
+
+Acceptance Test-Driven Development (ATDD) is an extension of TDD and works similarly. 
+Robot Framework is one of the most popluar test automation framework used for ATDD.
+
+However, ATDD requires high-level tests to ensure the app’s functional specifications are met.
+
+
