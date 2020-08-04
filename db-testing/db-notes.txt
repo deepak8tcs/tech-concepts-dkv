@@ -23,7 +23,7 @@ Eg having sum(price) =100
 -Semicolon is not mandatory at the end of sql statement
  but it's a good practice to use it.
  ==========================================
- Distict clause is applied in one column or one row(multi-column's values)??
+ Distinct clause is applied in one column or one row(multi-column's values)??
  
 SELECT DISTINCT expressions FROM tables [WHERE conditions];
 
