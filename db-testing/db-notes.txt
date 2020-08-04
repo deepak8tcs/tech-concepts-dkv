@@ -36,6 +36,8 @@ Note:
 2. When more than one expression is provided in the DISTINCT clause, the query will retrieve unique combinations for the expressions listed.
 3. In SQL, the DISTINCT clause doesn't ignore NULL values.
    So when using the DISTINCT clause in your SQL statement, your result set will include NULL as a distinct value.
+   
+ SELECT COUNT(DISTINCT Country) FROM Customers;
  ==========================================
  Self Join:
  
