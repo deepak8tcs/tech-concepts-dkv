@@ -29,7 +29,7 @@ Eg having sum(price) =100
 SELECT DISTINCT expressions FROM tables [WHERE conditions];
 
 expressions:
-The columns or calculations that you wish to retrieve.
+The columns or calculations that you wish to retrieve. e.g select id*salary, max(id)-min(salary) etc
 
 Note:
 1. When only one expression is provided in the DISTINCT clause, the query will return the unique values for that expression.
@@ -38,6 +38,7 @@ Note:
    So when using the DISTINCT clause in your SQL statement, your result set will include NULL as a distinct value.
    
  SELECT COUNT(DISTINCT Country) FROM Customers;
+ we can use distinct with all aggregate functions except max & min.
  ==========================================
  Self Join:
  
