@@ -22,6 +22,19 @@ Eg having sum(price) =100
 
 -Semicolon is not mandatory at the end of sql statement
  but it's a good practice to use it.
+ ==========================================
+ Distict clause is applied in one column or one row(multi-column's values)??
+ 
+SELECT DISTINCT expressions FROM tables [WHERE conditions];
+
+expressions:
+The columns or calculations that you wish to retrieve.
+
+Note:
+1. When only one expression is provided in the DISTINCT clause, the query will return the unique values for that expression.
+2. When more than one expression is provided in the DISTINCT clause, the query will retrieve unique combinations for the expressions listed.
+3. In SQL, the DISTINCT clause doesn't ignore NULL values.
+   So when using the DISTINCT clause in your SQL statement, your result set will include NULL as a distinct value.
  
  =========
  ***JOINs***
