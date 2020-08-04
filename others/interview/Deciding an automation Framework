@@ -1,0 +1,61 @@
+
+To help determine which automation framework is right for your organization, ask yourself the following helpful questions:
+
+1. Consider the application and the technology involved.
+(Web/mobile/Desktop app,angular or non-angular web app. if angular-Protractor more appropriate, non angular-any selenium framework)
+
+2. Think about testing requirements. Does the application have a very complex workflow?
+(UI,API,DB, performance,security )
+
+3. Determine license cost of the tool. What costs are associated with each framework?
+(try to use open source automation tools like selenium Java, Rest assured,Jmeter etc as they will save the cost of tool.
+
+4. Evaluate the skill sets available within your organization. What skills does your team already have? 
+Is there a team that could plug into one of the frameworks?
+(what tools ,language skills already we have)
+
+While evaluating multiple tools, it is helpful to create a scorecard to assess various parameters such as
+ease of scripting, integration, usage, reports generated. This will help you choose the right tool for you.
+
+
+A test automation framework:
+is an integrated system that sets the rules of automation of a specific product.
+This system integrates the function libraries, test data sources, object details and various reusable modules.
+
+Framework Components:
+Scripting
+object repositiories(POM)
+test data handling
+Utils
+Reporting
+logging
+Test Runner/Suite Runner
+
+Types of Framework: 
+Data Driven, Keyword Driven, Page Object Model, TDD(unit testing framework,e.g. Robot framework) BDD, Hybrid(combination of one or more framework )
+
+Benefits of Framework:
+ease of scripting,  scalability, modularity, process definition, reusability and low maintenance requirements.
+
+
+Other benefits of using test automation frameworks include:
+
+Maximum coverage
+Recovery scenario (a few of them automatically handled by frame work eg. when a scenario is afiled due to synchronization)
+Minimal manual intervention
+Easy reporting
+
+Recovery: As the word suggest, coming back on to the normal stage from any of the damaged situation.
+
+Recovery Scenario: To handle unwanted exception
+is used to instruct UFT to recover from unexpected events and errors that occur in your
+testing environment during a run session. Recovery scenarios are saved in recovery scenario files.
+
+Triggers which lead to exception:
+
+Unexpected pop-up window: appeared during execution, blocks execution
+Object State: Object attributes are not fetched at correct time and execution moves on and throwing errors.
+Test Run Error:  trigger not due to Application but due to other factors like accessing system resources, third party tools, network issues, file handling, reporting issue etc. 
+Application Crash: (for next scenario, feature file browser can be launched again by framework, so automatically this recovery scenario is handled by framework)
+Synchronization issues
+
