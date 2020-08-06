@@ -1,0 +1,45 @@
+
+# Captcha:
+Captcha is not meant to be automated(by definition its meant to distinguish between computer/Robot & human, if it can be automated then it's not a captcha.)
+ 
+We cannot automate CAPTCHA, as it is not meant to be automatized.
+
+How to deal with CAPTCHA?
+
+1. Either ask dev team for a workaround, like configure CAPTCHA in test environment in such a way it will always accept 1 specific value.
+
+2. Ask developer to disable the CAPTCHA module in testing environment.
+
+3. If your are using custom CAPTCHA module, you can ask developer to generate an API of CAPTCHA generation for testing environment.
+
+4. You can ask dev team to add CAPTCHA code as title in markup, then you can access this title and bypass the CAPTCHA, but only in the testing environment.
+
+Most of the time we go with option 1 or 2.
+
+NOTE: When you do work around for CAPTCHA in test environment,
+You should always have this point in your checklist to make sure workarounds for CAPTCHA testing are removed before it goes on production.
+
+
+## False Positive and False Negative Results in Tests
+
+False Positive and False Negative results have always been a nightmare for automation testers. 
+False Positive refers to the scenario where we get errors in our test cases even though the application under test works fine. 
+Vice Versa, false-negative results refer to the situation where we get passing results for our test cases; yet the application under test has bugs.
+ 
+Such flakiness misleads the testing team and increases the communication gap between the QA team and the development team.
+Handling flaky tests is itself a challenging task for automation testers.
+
+To overcome this flakiness, we need to make sure that the test plans, test cases, and the testing environment are managed
+in an appropriate and organized manner.
+
+
+## Cross Browser Testing:
+ Nowadays we have many cloud companies like SauceLab, BrowserStack etc which provide as complete infrastructure
+ like Windows, MAC, Linux with different browser combinations as well,
+ so if our script is compatible with all then it will be easy for us to run on the cloud.
+ 
+ ## Selenium limitation// cannot test Captcha, desktop app, mobile apps
+ 
+But we have a tool called Winium built on top of selenium for windows based desktop app testing.
+similarly Appium for Mobile apps testing.
+ 
