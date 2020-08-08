@@ -1,4 +1,27 @@
-﻿======GE Process==========================
+﻿===My Process==================
+git init //to initialize a git repo/ creates an empty git repo
+git clone <repo-url>
+When you clone a repository with git clone , it automatically creates a remote connection called origin pointing back to the cloned repository. 
+
+git branch <feature-name>  //create a local branch
+git checkout <feature-name> //switch to local branch
+ 
+git status
+git add .
+git commit -m "Commit msg"
+
+git pull origin master //we might get conflicts.
+
+git push origin <feature-name> //can be pushed even if not on branch
+
+git push -u origin <feature-name> // if pushing for the first time(upstream/remote branch is not created of this local branch)
+git push // or if u r already on the branch u want to push changes
+ 
+ Then a raise a pull request from this feature branch to origin master branch
+ 
+ 
+ ======GE Process starts==========================
+ 
  ***GIT:
 Local branches should be synced FROM master daily with below commands:
 
@@ -15,7 +38,7 @@ commiting changes:
 git add .
 git commit -m "Commit msg"
 or git -am "commit message" //to add all and commit in single line
-git push
+git push 
 -----------------------------------------------
 git branch: list of branch
 git branch feature1
@@ -39,10 +62,11 @@ git push origin --delete remoteBranchName
 
 Note-Use -D instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet.
 
- 
- 
+
 ﻿======GE Process Ends==========================
- Que: 
+ 
+ 
+ ***Que: 
 git pull vs git fetch
 git rebase vs merge
 what is index,tag
@@ -89,7 +113,7 @@ git add xyz.java
 git commit -m "<commit-message"> // to commit the files from staging area.
 
 //we can do git pull upstream master here after commit
-git push origin master
+git push origin master //here origin is connection for forked copy
 
 before pushing always do git pull upstream master to get the latest code.
 After this you might get merge conflicts which you will have to resolve manually. 
@@ -105,6 +129,7 @@ git push origin 19.3  //creates the branch 19.3 and pushes the code if branch is
 
 git branch -d 19.3 (<nameOfBranch>) //to delete the local branch
 
+
 //stashing code changes: //only staged code can be stashed: staged(git add .)
 
 git add .
@@ -119,7 +144,7 @@ git stash drop <stash_id>.
 git stash clear.
 If you no longer need a particular stash, you can delete it with: $ git stash drop <stash_id>. Or you can delete all of your stashes from the repo with: $ git stash clear.
 
-Note-after stashing the changes "git status" will not show any changesand once we pop, it starts displaying
+Note-after stashing the changes "git status" will not show any changes and once we pop, it starts displaying
 Note-pop vs apply:
 pop removes the changes from list and applies on working directory but apply only applies not removes changes from list.
 git init //to create an empty git repo
