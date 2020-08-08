@@ -12,6 +12,8 @@ working directory------git add-->Staging Area----git commit--->Git repository
 ============
 check-out and check-in of code
 remote repo->local repo->fork repo->remote repo
+
+we can have a local copy as well as remote copy of repo for every git branch.
 -----------------------------------
 git init //to initialize/make a newly created folder as git repo
 git help //to see common git commands
