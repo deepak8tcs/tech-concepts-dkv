@@ -28,4 +28,7 @@ Modify the request payload accordingly n hit the payload
 Scenario around request url, header, request body
 Scenario around authorized and non authorized users
 Scenario for XSS
-Scenario for 200,201,403,401,204,404,400,415 etc
+Scenario for:
+2.x.x(Success): 200,201,204,
+4.x.x(Client Error): 400,404,409,415 etc.
+//5.x.x(Server Error): 500,502
