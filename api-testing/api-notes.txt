@@ -38,3 +38,5 @@ Things to check assert:
 Response code (for all )
 Response header ( for specific cases)
 Response body ( for post, we can check whether same data we passed is present in response)
+
+Response json schema validation
