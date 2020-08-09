@@ -119,6 +119,7 @@ The software that hosts the containers is called Docker Engine
 Docker Provides Simple Commands You Can Use To Build, Start, Or Stop Containers.
 
  *******************************
+K8s: automates application deployment,scaling, management.
 
 Kubernetes: (Job like Football coach, choreographer, keeps on monitoring each node/pod)
 
