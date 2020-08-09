@@ -32,3 +32,9 @@ Scenario for:
 2.x.x(Success): 200,201,204,
 4.x.x(Client Error): 400,404,409,415 etc.
 //5.x.x(Server Error): 500,502
+
+***
+Things to check assert:
+Response code (for all )
+Response header ( for specific cases)
+Response body ( for post, we can check whether same data we passed is present in response)
