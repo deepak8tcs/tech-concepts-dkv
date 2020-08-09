@@ -50,6 +50,9 @@ Note:
  
  =========
  ***JOINs***
+ 
+ Inner join is subset of outer join. 
+ 
  In case of Inner join, record filtering happens on both tables. In case of left join , filtering happens on right table & vice-versa.
  
  Condition in ON vs WHERE clause: Both used for filtering the records.
