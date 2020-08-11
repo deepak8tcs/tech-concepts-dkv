@@ -40,3 +40,45 @@ Response header ( for specific cases)
 Response body ( for post, we can check whether same data we passed is present in response)
 
 Response json schema validation
+=========================================
+
+Rest Vs Soap:
+
+
+SoapUI is an open-source web service testing application for Simple Object Access Protocol and representational state transfers. Its functionality covers web service inspection, invoking, development, simulation and mocking, functional testing, load and compliance testing.
+License: EUPL (SoapUI Open Source); Proprietary (SoapUI Pro)
+Developed by: SmartBear Software
+Written in: Groovy
+
+Smart Bear ReadyAPI is a suite of tools to help you ensure high quality, performance, and security in your APIs. One download gives you access to the features of each tool within a unified experience. It’s a Unified tool, contains SoapUI as well.
+=>Used for API Functional, Performance, Security testing
+
+Swagger is an open-source software set of tools to design, build, document, and use RESTful web services, developed by SmartBear Software. It includes automated documentation, code generation, and test-case generation.
+
+Which is better SoapUI vs postman?
+To summarize, Postman is a better choice for manual and exploratory REST API testing while SoapUI is a preferred tool for API Automation with different protocols like SOAP, REST and GraphQL.
+
+Can we test REST API in SoapUI?
+There is no standard for the description format of REST services. You can import your REST service in SoapUI by using WADL files. Besides, SoapUI Pro supports the OpenAPI, Swagger and RAML formats. Your basic REST HTTP requests are: POST, GET, PUT, and DELETE.
+
+
+
+WSDL: (WSDL /ˈwɪz dəl/) 
+
+WSDL The Web Service Description Language (WSDL) is an XML vocabulary used to describe SOAP-based web services. (used for describing the functionality offered by a web service.)
+
+
+WADL The Web Application Description Language (WADL) is an XML vocabulary used to describe RESTful web services. Models the resources provided by a service and the relationships between them.
+
+
+
+REST is primarily used over HTTP and it makes use of HTTP GET, POST, PUT, DELETE and PATCH methods for different CRUD operations. 
+SOAP also defines a binding to the HTTP protocol. When binding to HTTP, all SOAP requests are sent through HTTP POST.
+
+REST API/Webservice: provide interoperability between computer systems on the internet.
+It works on Client-Server based architecture.
+Client initiates requests, Server responds to the requests initiated by client.
+Client(Browser)  <----------> Server
+
+Interoperability: the ability of computer systems or software to exchange and make use of information.
+
