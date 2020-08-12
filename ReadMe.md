@@ -1,3 +1,12 @@
+# Major challenges in Automation:
+Maintainabilty (follow pom)
+Reusabilty (follow BDD, Inheritance)
+Usabilty (should be easy to use)
+
+Scalability (e.g.parallel testing)
+Reliability (to reduce flaky tests)
+
+
 ## GIT commands:
 
 Local branches should be synced FROM master with below commands:
