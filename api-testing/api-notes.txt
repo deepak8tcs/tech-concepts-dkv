@@ -81,4 +81,6 @@ Client initiates requests, Server responds to the requests initiated by client.
 Client(Browser)  <----------> Server
 
 Interoperability: the ability of computer systems or software to exchange and make use of information.
+=====
+=>Caching is useful in API as request for the data( that rarely change) should not go to the database everytime. e.g. getting list of countries or currencies.
 
