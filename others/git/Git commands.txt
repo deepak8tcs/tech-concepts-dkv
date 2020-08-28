@@ -17,7 +17,7 @@ git push origin <feature-name> //can be pushed even if not on branch
 git push -u origin <feature-name> // if pushing for the first time(upstream/remote branch is not created of this local branch)
 git push // or if u r already on the branch u want to push changes
  
- Then a raise a pull request from this feature branch to origin master branch
+ Then a raise a pull request from this feature branch(as source branch) to origin master(target) branch
  
  
  ======GE Process starts==========================
